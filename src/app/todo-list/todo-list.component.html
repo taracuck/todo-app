@@ -9,13 +9,18 @@
       (submitEvent)="addTask($event)"
     ></app-add-form>
     <div class="list-container">
-      <ul class="ul-list" [ngClass]="{ 'dark-container': darkMode }">
+      <ul
+        class="ul-list"
+        [ngClass]="{ 'dark-container': darkMode }"
+        cdkDropList
+        (cdkDropListDropped)="drop($event)"
+      >
         <app-todo
           *ngFor="let todo of todos; index as i"
           [todoRef]="todo"
           [darkModeRef]="darkMode"
-          (completedEvent)="updateCompleted(i)"
-          (deleteEvent)="deleteTask(i)"
+          (completedEvent)="updateCompleted(todo)"
+          (deleteEvent)="deleteTask(todo)"
         >
         </app-todo>
       </ul>

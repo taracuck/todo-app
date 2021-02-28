@@ -9,28 +9,35 @@ export class TodoService {
     {
       task: 'Complete online JavaScript course',
       completed: true,
+      id: 1,
     },
     {
       task: 'Jog around the park 3x',
       completed: false,
+      id: 2,
     },
     {
       task: '10 minutes meditation',
       completed: false,
+      id: 3,
     },
     {
       task: 'Read for 1 hour',
       completed: false,
+      id: 4,
     },
     {
       task: 'Pick up groceries',
       completed: false,
+      id: 5,
     },
     {
       task: 'Complete Todo App on Frontend Mentor',
       completed: false,
+      id: 6,
     },
   ];
+  nextId: number = 7;
   darkMode: boolean = false;
 
   constructor() {}
@@ -46,15 +53,20 @@ export class TodoService {
     return filteredTasks;
   };
 
-  updateCompleted = (index: number) => {
+  updateCompleted = (todo: Todo) => {
+    let todoId: number = todo.id;
+    let index: number = this.todos.findIndex((item) => item.id === todoId);
     this.todos[index].completed = !this.todos[index].completed;
   };
 
   addTask = (todo: Todo) => {
+    todo.id = this.nextId++;
     this.todos.push(todo);
   };
 
-  deleteTask = (index: number) => {
+  deleteTask = (todo: Todo) => {
+    let todoId: number = todo.id;
+    let index: number = this.todos.findIndex((item) => item.id === todoId);
     this.todos.splice(index, 1);
   };
 
