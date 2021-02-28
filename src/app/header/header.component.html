@@ -1,0 +1,15 @@
+<header class="header">
+  <h1>T O D O</h1>
+  <img
+    *ngIf="!darkModeRef"
+    src="assets/icon-moon.svg"
+    alt="Moon Icon"
+    (click)="sendModeSwitch()"
+  />
+  <img
+    *ngIf="darkModeRef"
+    src="assets/icon-sun.svg"
+    alt="Sun Icon"
+    (click)="sendModeSwitch()"
+  />
+</header>

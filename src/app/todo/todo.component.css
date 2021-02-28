@@ -1,0 +1,48 @@
+.list-item {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 400;
+  list-style: none;
+  align-items: center;
+  padding: 0px 10px;
+  border-bottom: 1px solid hsl(233, 11%, 84%);
+}
+
+.task {
+  flex: 1;
+  color: hsl(235, 19%, 35%);
+  padding: 20px 0px;
+}
+
+.completed-task {
+  color: hsl(234, 39%, 85%) !important;
+  text-decoration: line-through;
+}
+
+.delete-button {
+  height: 10px;
+  width: 10px;
+  margin-right: 10px;
+}
+
+.darkMode-text {
+  color: hsl(236, 33%, 92%);
+}
+
+@media only screen and (min-width: 1440px) {
+  .list-item {
+    padding: 0px 15px;
+  }
+  .delete-button {
+    display: none;
+  }
+  .task {
+    padding: 25px 0px;
+  }
+  .task:hover + .delete-button {
+    display: block;
+  }
+  .delete-button:hover {
+    display: block;
+  }
+}

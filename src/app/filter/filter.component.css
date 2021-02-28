@@ -1,0 +1,27 @@
+.filter {
+  display: flex;
+  background-color: white;
+  padding: 20px 80px;
+  border-radius: 8px;
+  justify-content: space-between;
+  color: hsl(236, 9%, 61%);
+}
+
+.hover-text:hover {
+  color: hsl(235, 19%, 35%);
+}
+
+.dark-hover-text:hover {
+  color: hsl(236, 33%, 92%);
+}
+
+.active-tab {
+  color: hsl(220, 98%, 61%);
+}
+
+@media only screen and (min-width: 1440px) {
+  .filter {
+    padding: 20px 60px;
+    justify-content: space-between;
+  }
+}

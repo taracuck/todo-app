@@ -1,0 +1,29 @@
+<div class="list-item">
+  <div
+    class="todo-check"
+    [ngClass]="{
+      completed: todoRef.completed
+    }"
+    (click)="emitCompletedEvent()"
+  >
+    <img
+      *ngIf="todoRef.completed"
+      src="assets/icon-check.svg"
+      alt="completed check mark"
+    />
+  </div>
+  <li
+    class="task"
+    [ngClass]="{
+      'completed-task': todoRef.completed,
+      'darkMode-text': darkModeRef
+    }"
+  >
+    {{ todoRef.task }}
+  </li>
+  <img
+    src="/assets/icon-cross.svg"
+    class="delete-button"
+    (click)="emitDeleteEvent()"
+  />
+</div>

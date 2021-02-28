@@ -1,0 +1,85 @@
+.ul-list {
+  border-radius: 8px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+.total-page {
+  min-height: 100vh;
+  background-image: url("/assets/bg-mobile-light.jpg");
+  background-repeat: no-repeat;
+  background-color: hsl(0, 0%, 98%);
+}
+
+.dark-background {
+  background-image: url("/assets/bg-mobile-dark.jpg");
+  background-color: hsl(235, 21%, 11%);
+}
+
+.list-container {
+  border-radius: 8px;
+  background-color: white;
+}
+
+.todo-list-status {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 15px 15px 20px;
+  color: hsl(236, 9%, 61%);
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.page-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0px 25px;
+  margin: auto;
+}
+
+.full-list-status {
+  display: none;
+}
+
+.hover-text:hover {
+  color: hsl(235, 19%, 35%);
+}
+
+.dark-hover-text:hover {
+  color: hsl(236, 33%, 92%);
+}
+
+.filter-bar {
+  margin-top: 15px;
+}
+
+@media only screen and (min-width: 376px) {
+  .total-page {
+    background-image: url("/assets/bg-desktop-light.jpg");
+  }
+  .dark-background {
+    background-image: url("/assets/bg-desktop-dark.jpg");
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .todo-list-status {
+    padding: 10px 25px;
+    justify-content: space-between;
+  }
+  .page-container {
+    width: 33.33%;
+  }
+  .full-list-status {
+    display: inline;
+    flex: 1;
+  }
+  .filter-bar {
+    display: none;
+  }
+  .status-text {
+    font-size: 13px;
+  }
+}

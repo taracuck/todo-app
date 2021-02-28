@@ -1,0 +1,29 @@
+<div class="filter" [ngClass]="{ 'dark-container': darkModeRef }">
+  <p
+    (click)="emitAllClick()"
+    class="darker-text hover-text"
+    [ngClass]="{ 'active-tab': checkTab(''), 'dark-hover-text': darkModeRef }"
+  >
+    All
+  </p>
+  <p
+    (click)="emitActiveClick()"
+    class="darker-text hover-text"
+    [ngClass]="{
+      'active-tab': checkTab('active'),
+      'dark-hover-text': darkModeRef
+    }"
+  >
+    Active
+  </p>
+  <p
+    (click)="emitCompletedClick()"
+    class="darker-text hover-text"
+    [ngClass]="{
+      'active-tab': checkTab('completed'),
+      'dark-hover-text': darkModeRef
+    }"
+  >
+    Completed
+  </p>
+</div>

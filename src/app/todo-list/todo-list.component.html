@@ -1,0 +1,49 @@
+<div class="total-page" [ngClass]="{ 'dark-background': darkMode }">
+  <div class="page-container">
+    <app-header
+      (modeSwitch)="switchTheme()"
+      [darkModeRef]="darkMode"
+    ></app-header>
+    <app-add-form
+      [darkModeRef]="darkMode"
+      (submitEvent)="addTask($event)"
+    ></app-add-form>
+    <div class="list-container">
+      <ul class="ul-list" [ngClass]="{ 'dark-container': darkMode }">
+        <app-todo
+          *ngFor="let todo of todos; index as i"
+          [todoRef]="todo"
+          [darkModeRef]="darkMode"
+          (completedEvent)="updateCompleted(i)"
+          (deleteEvent)="deleteTask(i)"
+        >
+        </app-todo>
+      </ul>
+      <div class="todo-list-status" [ngClass]="{ 'dark-container': darkMode }">
+        <p class="status-text">{{ calculateUncompleted() }} items left</p>
+        <app-filter
+          class="full-list-status status-text"
+          [ngClass]="{ 'dark-container': darkMode }"
+          [darkModeRef]="darkMode"
+          (allClick)="setFilterWord($event)"
+          (activeClick)="setFilterWord($event)"
+          (completedClick)="setFilterWord($event)"
+        ></app-filter>
+        <p
+          (click)="clearCompleted()"
+          class="status-text darker-text hover-text"
+          [ngClass]="{ 'dark-hover-text': darkMode }"
+        >
+          Clear Completed
+        </p>
+      </div>
+    </div>
+    <app-filter
+      class="filter-bar"
+      [darkModeRef]="darkMode"
+      (allClick)="setFilterWord($event)"
+      (activeClick)="setFilterWord($event)"
+      (completedClick)="setFilterWord($event)"
+    ></app-filter>
+  </div>
+</div>

@@ -1,0 +1,17 @@
+<form
+  #addForm="ngForm"
+  class="form"
+  (ngSubmit)="emitSubmitEvent(addForm)"
+  [ngClass]="{ 'dark-container': darkModeRef }"
+>
+  <button class="todo-check"></button>
+  <input
+    type="text"
+    name="newTask"
+    id="newTask"
+    placeholder="Create a new todo..."
+    class="input"
+    [ngClass]="{ 'dark-input': darkModeRef }"
+    ngModel
+  />
+</form>

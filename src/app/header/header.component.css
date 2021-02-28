@@ -1,0 +1,15 @@
+.header {
+  display: flex;
+  color: white;
+  align-items: center;
+  margin-top: 50px;
+  margin-bottom: 30px;
+  justify-content: space-between;
+}
+
+@media only screen and (min-width: 1440px) {
+  .header {
+    margin-top: 80px;
+    margin-bottom: 30px;
+  }
+}

@@ -1,1 +1,53 @@
-/* You can add global styles to this file, and also import other style files */
+body,
+h1,
+p,
+ul,
+li {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-size: 12px;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+.todo-check {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1px solid hsl(236, 33%, 92%);
+  margin: 0px 20px 0px 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+}
+
+.check-mark {
+  width: 15px;
+  height: 15px;
+}
+
+.completed {
+  border-radius: 50%;
+  background-image: linear-gradient(
+    to bottom right,
+    hsl(192, 100%, 67%),
+    hsl(280, 87%, 65%)
+  );
+}
+
+.dark-container {
+  background-color: hsl(235, 24%, 19%) !important;
+}
+
+@media only screen and (min-width: 1440px) {
+  body {
+    background-image: url("assets/bg-desktop-light.jpg");
+    font-size: 18px;
+  }
+  .darker-text:hover {
+    color: hsl(235, 19%, 35%);
+  }
+}
